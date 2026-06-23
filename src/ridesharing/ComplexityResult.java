@@ -2,14 +2,7 @@ package ridesharing;
 
 import java.util.List;
 
-/**
- * Holds everything produced by one "timed" algorithm run:
- *   - the assignments (output of the algorithm)
- *   - actual wall-clock start / end time in nanoseconds
- *   - actual operation count (steps counted inside the algorithm)
- *   - theoretical operation count  (n², n³, or n!)
- *   - the Big-O formula string
- */
+
 public class ComplexityResult {
 
     public final String          algorithmName;
@@ -50,7 +43,7 @@ public class ComplexityResult {
     public double elapsedMillis()  { return elapsedNanos / 1_000_000.0; }
 
     /** Total assignment cost (sum of distances). */
-    public double totalCost() {
+    public double totalCost() { 
         double sum = 0;
         for (Assignment a : assignments) sum += a.distance;
         return sum;
